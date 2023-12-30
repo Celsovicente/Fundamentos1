@@ -9,9 +9,9 @@ int main(int argc, char *argv[])
 	float quantidade, lucro, prejuizos, valorPago;
 		while(i != 0)
 		{
-			printf("\nEntre com a Quantidade a ser apostada:\n");
+			printf("\nEntre com a Quantidade a ser apostada:");
 			scanf("%f",&quantidade);
-			printf("\n Qual o numero a apostar?\n");
+			printf("\n Qual o numero a apostar?");
 			scanf("%d",&numeroDeApostas);
 			numeroSorteado = rand()%51;
 				if(quantidade < 0)
@@ -38,8 +38,9 @@ int main(int argc, char *argv[])
 																 printf("\n A quantia apostada foi: %.2f", quantidade);
 																  printf("\n O numero apostado foi: %d", numeroDeApostas);
 																   printf("\n O numero sorteado foi: %d", numeroSorteado);
-																    printf("\n O cassino pagou %.2f", valorPago);
-																     printf("\n O Usuario ganhou %.2f", lucro);
+																    printf("\n---------------------------------------------\n");
+																     printf("\n O cassino pagou %.2f", valorPago);
+																      printf("\n O Usuario ganhou %.2f", lucro);
 															}
 																else if(numeroDeApostas / 10 == numeroSorteado % 10)
 																{
@@ -51,8 +52,9 @@ int main(int argc, char *argv[])
 																		 printf("\n A quantia apostada foi: %.2f", quantidade);
 																		  printf("\n O numero apostado foi: %d", numeroDeApostas);
 																		   printf("\n O numero sorteado foi: %d", numeroSorteado);
-																		    printf("\n O cassino pagou %.2f", valorPago);
-																		     printf("\n O Usuario ganhou %.2f", lucro);
+																		    printf("\n---------------------------------------------\n");
+																		     printf("\n O cassino pagou %.2f", valorPago);
+																		      printf("\n O Usuario ganhou %.2f", lucro);
 																	}
 																}
 																	else if(numeroDeApostas/10 == numeroSorteado/10)
@@ -63,8 +65,9 @@ int main(int argc, char *argv[])
 																		 printf("\n A quantia apostada foi: %.2f", quantidade);
 																		  printf("\n O numero apostado foi: %d", numeroDeApostas);
 																		   printf("\n O numero sorteado foi: %d", numeroSorteado);
-																		    printf("\n O cassino pagou %.2f", valorPago);
-																		     printf("\n O Usuario ganhou %.2f", lucro);				
+																		    printf("\n---------------------------------------------\n");
+																		     printf("\n O cassino pagou %.2f", valorPago);
+																		      printf("\n O Usuario ganhou %.2f", lucro);				
 																	}
 																		else if(numeroDeApostas == ((numeroSorteado / 10) + (numeroSorteado % 10)))
 																		{
@@ -74,33 +77,52 @@ int main(int argc, char *argv[])
 																			 printf("\n A quantia apostada foi: %.2f", quantidade);
 																			  printf("\n O numero apostado foi: %d", numeroDeApostas);
 																			   printf("\n O numero sorteado foi: %d", numeroSorteado);
-																			    printf("\n O cassino pagou %.2f", valorPago);
-																			     printf("\n O Usuario ganhou %.2f", lucro);
+																			    printf("\n---------------------------------------------\n");
+																			     printf("\n O cassino pagou %.2f", valorPago);
+																			      printf("\n O Usuario ganhou %.2f", lucro);
 																		}
 																			else if(numeroDeApostas % 2 == 0)
 																			{
 																				if(numeroSorteado % 2 == 0)
-																				 printf("\n Nao ha lucros ou prejuizos");
+																				 {
+																				 	valorPago = quantidade;
+																				 	 printf("\n Jogada %d",q);
+																			 		  printf("\n A quantia apostada foi: %.2f", quantidade);
+																			  		    printf("\n O numero apostado foi: %d", numeroDeApostas);
+																			   		     printf("\n O numero sorteado foi: %d", numeroSorteado);
+																			   		   	  printf("\n---------------------------------------------\n");
+																				 	       printf("\n O cassino pagou %.2f", valorPago);
+																			     		    printf("\n O Usuario ganhou %.2f", lucro);
+																				 }
 																			}
 																			if(numeroDeApostas % 2 == 1)
 																			{
 																				if(numeroSorteado % 2 == 1)
-																				 printf("\n Nao ha lucros ou prejuizos");
+																				 {
+																				 	valorPago = quantidade;
+																				 	 printf("\n Jogada %d",q);
+																			 		  printf("\n A quantia apostada foi: %.2f", quantidade);
+																			  		    printf("\n O numero apostado foi: %d", numeroDeApostas);
+																			   		     printf("\n O numero sorteado foi: %d", numeroSorteado);
+																			   		      printf("\n---------------------------------------------\n");
+																				 		   printf("\n O cassino pagou %.2f", valorPago);
+																			     		    printf("\n O Usuario ganhou %.2f", lucro);
+																				 }
 																			}
 																				else
 																				{
 																					prejuizos = quantidade;
-																					printf("\n Jogada %d",q);
-																					printf("\n A quantia apostada foi: %.2f", quantidade);
-																					printf("\n O numero apostado foi: %d", numeroDeApostas);
-																					printf("\n O numero sorteado foi: %d", numeroSorteado);
-																					printf("\n O Usuario perdeu %.2f", prejuizos);
+																					 printf("\n Jogada %d",q);
+																					  printf("\n A quantia apostada foi: %.2f", quantidade);
+																					   printf("\n O numero apostado foi: %d", numeroDeApostas);
+																					    printf("\n O numero sorteado foi: %d", numeroSorteado);
+																					     printf("\n---------------------------------------------\n");
+																					      printf("\n O cassino pagou %.2f", valorPago);
+																					       printf("\n O Usuario perdeu %.2f", prejuizos);
 																				}
-																
+							
 														}
 									}
-							
-						
 		}
 	return 0;
 }
