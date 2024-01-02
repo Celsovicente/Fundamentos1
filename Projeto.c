@@ -5,8 +5,8 @@
 int main(int argc, char *argv[])
 {
 	srand(time(NULL));
-	int numeroDeApostas, numeroSorteado, q = 0;
-	float quantidade, lucro, prejuizo, valorPago;
+	int numeroDeApostas = 1, numeroSorteado, q = 0;
+	float quantidade, lucro = 0, prejuizo = 0, valorPago = 0;
 	while(numeroDeApostas != 0)
 	{
 		printf("\n Digite a quantidade da aposta:");
@@ -72,7 +72,7 @@ int main(int argc, char *argv[])
 					 			  			         printf("\n Jogador ganhou: %.2fKz",lucro);
 										}
 		
-												else if((numeroDeApostas % 10) == (numeroSorteado % 10))
+											else if((numeroDeApostas % 10) == (numeroSorteado % 10))
 											{
 													valorPago = quantidade * 2;
 						 			  				lucro = valorPago - quantidade;
@@ -88,7 +88,7 @@ int main(int argc, char *argv[])
 									
 								}
 								else if(numeroDeApostas == ((numeroSorteado / 10) + (numeroSorteado % 10)))
-									{
+								{
 										valorPago = quantidade * 2;
 				 			  			lucro = valorPago - quantidade;
 					 			  			printf("\n Jogada %d", q);
@@ -99,7 +99,7 @@ int main(int argc, char *argv[])
 					 			  			      printf("\n-------------------------------------\n");
 					 			  			        printf("\n Cassino pagou: %.2fKz",valorPago);
 					 			  			         printf("\n Jogador ganhou: %.2fKz",lucro);
-									}
+								}
 								
 								else if(numeroDeApostas % 2 == 0)
 								{
@@ -134,7 +134,7 @@ int main(int argc, char *argv[])
 								
 								else
 								{
-									prejuizo = quantidade;
+									prejuizo = prejuizo + quantidade;
 										printf("\n Jogada %d", q);
 				 			  			 printf("\n Quantia Apostada: %.2fKz",quantidade);
 				 			  			  printf("\n Numero Apostado %d", numeroDeApostas);
