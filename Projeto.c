@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
 		printf("\n Digite a quantidade da aposta:");
 		scanf("%f", &quantidade);
 		numeroSorteado = rand()%50 + 1;
-		numeroSorteado = 12;
+		numeroSorteado = 2;
 		if(quantidade < 0)
 		  printf("\n Erro: Valor Invalido! A quantidade deve ser positiva!");
 		  	else if(quantidade == 0)
@@ -41,8 +41,8 @@ int main(int argc, char *argv[])
 						}
 						else 
 						{
-								dezena = numeroDeApostas / 10;
-								unidade = numeroDeApostas % 10;
+								dezena = numeroSorteado / 10;
+								unidade = numeroSorteado % 10;
 			 			  		q = q + 1;
 			 			  		if(numeroDeApostas == numeroSorteado)
 			 			  		{
@@ -57,8 +57,28 @@ int main(int argc, char *argv[])
 			 			  			printf("\n---------------------------------------------------------\n");
 			 			  			printf("\n Cassino pagou: %.2fKz", valorPago);
 			 			  			printf("\n Jogador ganhou: %.2fKz", lucro);
+			 			  			
+			 			  			if(lucro > prejuizo)
+			 			  			{
+			 			  				lucro = lucro - prejuizo;
+			 			  				printf("\n-----------------------------------------------------------\n");
+			 			  				printf("\n Ate agora o jogador tem um lucro de %.2f",lucro);
+									}
+									else if(lucro == prejuizo)
+									{
+										lucro = prejuizo = 0;
+										printf("\n-----------------------------------------------------------\n");
+			 			  				printf("\n O jogador nao tem nem lucro nem prejuizo");
+										
+									}
+									else
+									{
+										prejuizo = prejuizo - lucro;
+										printf("\n-----------------------------------------------------------\n");
+			 			  				printf("\n Ate agora o jogador tem um prejuizo de %.2f",prejuizo);
+									}
 								}
-								else if(((unidade * 10) + dezena) == numeroSorteado)
+								else if(numeroDeApostas == ((unidade * 10) + dezena))
 									{
 										valorPago = quantidade * 3;
 									 	lucro = valorPago - quantidade;
@@ -71,9 +91,29 @@ int main(int argc, char *argv[])
 									 	printf("\n--------------------------------------------------------\n");
 									 	printf("\n Cassino pagou: %.2fKz",valorPago);
 									 	printf("\n Jogador ganhou: %.2fKz",lucro);
+									 	
+									 	if(lucro > prejuizo)
+					 			  		{
+					 			  			lucro = lucro - prejuizo;
+					 			  			printf("\n-----------------------------------------------------------\n");
+					 			  			printf("\n Ate agora o jogador tem um lucro de %.2f",lucro);
+										}
+											else if(lucro == prejuizo)
+											{
+												lucro = prejuizo = 0;
+												printf("\n-----------------------------------------------------------\n");
+					 			  				printf("\n O jogador nao tem nem lucro nem prejuizo");
+												
+											}
+												else
+												{
+													prejuizo = prejuizo - lucro;
+													printf("\n-----------------------------------------------------------\n");
+					 			  					printf("\n Ate agora o jogador tem um prejuizo de %.2f",prejuizo);
+												}
 									} 
 												 
-												else if(numeroDeApostas == (numeroSorteado / 10))
+									else if(numeroDeApostas == (numeroSorteado / 10))
 													{
 															valorPago = quantidade * 2;
 															lucro = valorPago - quantidade;
@@ -86,6 +126,26 @@ int main(int argc, char *argv[])
 															printf("\n--------------------------------------------------------\n");
 															printf("\n Cassino pagou: %.2fKz",valorPago);
 															printf("\n Jogador ganhou: %.2fKz",lucro);
+															
+												if(lucro > prejuizo)
+						 			  			{
+						 			  				lucro = lucro - prejuizo;
+						 			  				printf("\n-----------------------------------------------------------\n");
+						 			  				printf("\n Ate agora o jogador tem um lucro de %.2f",lucro);
+												}
+												else if(lucro == prejuizo)
+												{
+													lucro = prejuizo = 0;
+													printf("\n-----------------------------------------------------------\n");
+						 			  				printf("\n O jogador nao tem nem lucro nem prejuizo");
+													
+												}
+												else
+												{
+													prejuizo = prejuizo - lucro;
+													printf("\n-----------------------------------------------------------\n");
+						 			  				printf("\n Ate agora o jogador tem um prejuizo de %.2f",prejuizo);
+												}
 													}
 												//	else if(numeroDeApostas == (numeroSorteado % 10))
 												//	{
@@ -115,6 +175,26 @@ int main(int argc, char *argv[])
 										printf("\n--------------------------------------------------------\n");
 										printf("\n Cassino pagou: %.2fKz",valorPago);
 										printf("\n Jogador ganhou: %.2fKz",lucro);	
+										
+										if(lucro > prejuizo)
+				 			  			{
+				 			  				lucro = lucro - prejuizo;
+				 			  				printf("\n-----------------------------------------------------------\n");
+				 			  				printf("\n Ate agora o jogador tem um lucro de %.2f",lucro);
+										}
+										else if(lucro == prejuizo)
+										{
+											lucro = prejuizo = 0;
+											printf("\n-----------------------------------------------------------\n");
+				 			  				printf("\n O jogador nao tem nem lucro nem prejuizo");
+											
+										}
+										else
+										{
+											prejuizo = prejuizo - lucro;
+											printf("\n-----------------------------------------------------------\n");
+				 			  				printf("\n Ate agora o jogador tem um prejuizo de %.2f",prejuizo);
+										}
 									} 
 												
 											else if((numeroDeApostas % 10) == (numeroSorteado % 10)) 
@@ -131,6 +211,25 @@ int main(int argc, char *argv[])
 											    printf("\n Cassino pagou: %.2fKz",valorPago);
 												printf("\n Jogador ganhou: %.2fKz",lucro);
 															 			  		
+											if(lucro > prejuizo)
+						 			  		{
+						 			  			lucro = lucro - prejuizo;
+						 			  			printf("\n-----------------------------------------------------------\n");
+						 			  			printf("\n Ate agora o jogador tem um lucro de %.2f",lucro);
+											}
+												else if(lucro == prejuizo)
+												{
+													lucro = prejuizo = 0;
+													printf("\n-----------------------------------------------------------\n");
+						 			  				printf("\n O jogador nao tem nem lucro nem prejuizo");
+													
+												}
+													else
+													{
+														prejuizo = prejuizo - lucro;
+														printf("\n-----------------------------------------------------------\n");
+							 			  				printf("\n Ate agora o jogador tem um prejuizo de %.2f",prejuizo);
+													}
 											}
 											
 											else if((numeroDeApostas % 10) == (numeroSorteado / 10)) 
@@ -146,7 +245,24 @@ int main(int argc, char *argv[])
 												printf("\n--------------------------------------------------------\n");
 											    printf("\n Cassino pagou: %.2fKz",valorPago);
 												printf("\n Jogador ganhou: %.2fKz",lucro);
-															 			  		
+											if(lucro > prejuizo)
+						 			  			{
+						 			  				lucro = lucro - prejuizo;
+						 			  				printf("\n-----------------------------------------------------------\n");
+						 			  				printf("\n Ate agora o jogador tem um lucro de %.2f",lucro);
+												}
+												else if(lucro == prejuizo)
+												{
+													lucro = prejuizo = 0;
+													printf("\n-----------------------------------------------------------\n");
+						 			  				printf("\n O jogador nao tem nem lucro nem prejuizo");
+												}
+												else
+												{
+													prejuizo = prejuizo - lucro;
+													printf("\n-----------------------------------------------------------\n");
+						 			  				printf("\n Ate agora o jogador tem um prejuizo de %.2f",prejuizo);
+												}
 											}
 											
 										//	else if((numeroDeApostas / 10) == (numeroSorteado % 10)) 
@@ -166,7 +282,7 @@ int main(int argc, char *argv[])
 										//	}
 
 										else if(numeroDeApostas == ((numeroSorteado / 10) + (numeroSorteado % 10)))
-											{
+										{
 												valorPago = quantidade * 2;
 							 			  		lucro = valorPago - quantidade;
 							 			  		printf("\n ______________________________________________________ \n");
@@ -178,9 +294,28 @@ int main(int argc, char *argv[])
 							 			  		printf("\n--------------------------------------------------------\n");
 							 			  		printf("\n Cassino pagou: %.2fKz",valorPago);
 							 			  		printf("\n Jogador ganhou: %.2fKz",lucro);
-											} 
+							 			  	if(lucro > prejuizo)
+					 			  			{
+					 			  				lucro = lucro - prejuizo;
+					 			  				printf("\n-----------------------------------------------------------\n");
+					 			  				printf("\n Ate agora o jogador tem um lucro de %.2f",lucro);
+											}
+											else if(lucro == prejuizo)
+											{
+												lucro = prejuizo = 0;
+												printf("\n-----------------------------------------------------------\n");
+					 			  				printf("\n O jogador nao tem nem lucro nem prejuizo");
+												
+											}
+											else
+											{
+												prejuizo = prejuizo - lucro;
+												printf("\n-----------------------------------------------------------\n");
+					 			  				printf("\n Ate agora o jogador tem um prejuizo de %.2f",prejuizo);
+											}
+										} 
 											
-											else if (numeroSorteado % 2 == numeroDeApostas % 2) 
+											else if ((numeroSorteado % 2) == (numeroDeApostas % 2)) 
 											{
 													valorPago = quantidade;
 								 			  		lucro = valorPago - quantidade;
@@ -194,11 +329,30 @@ int main(int argc, char *argv[])
 								 			  		printf("\n Cassino pagou: %.2fKz",valorPago);
 								 			  		printf("\n Jogador ganhou: %.2fKz",lucro);
 								 			  		
+								 				if(lucro > prejuizo)
+						 			  			{
+						 			  				lucro = lucro - prejuizo;
+						 			  				printf("\n-----------------------------------------------------------\n");
+						 			  				printf("\n Ate agora o jogador tem um lucro de %.2f",lucro);
+												}
+												else if(lucro == prejuizo)
+												{
+													lucro = prejuizo = 0;
+													printf("\n-----------------------------------------------------------\n");
+						 			  				printf("\n O jogador nao tem nem lucro nem prejuizo");
+													
+												}
+												else
+												{
+													prejuizo = prejuizo - lucro;
+													printf("\n-----------------------------------------------------------\n");
+						 			  				printf("\n Ate agora o jogador tem um prejuizo de %.2f",prejuizo);
+												}
 								 			}
 								 			
 								 			else
 												{
-													prejuizo = prejuizo + quantidade;
+													prejuizo = quantidade;
 													printf("\n _______________________________________________________ \n");
 													printf("\n Jogada %d", q);
 								 			  		printf("\n Quantia Apostada: %.2fKz",quantidade);
@@ -208,8 +362,25 @@ int main(int argc, char *argv[])
 								 			  		printf("\n----------------------------------------------------------\n");
 								 			  		printf("\n Cassino pagou: %.2fKz",valorPago);
 								 			  		printf("\n Jogador perdeu: %.2fKz",prejuizo);
-								 			  		printf("\n----------------------------------------------------------\n");
-								 			  		printf("\n Ate agora o jogador tem um prejuizo: %.2fKZ",prejuizo);
+								 			  		
+								 			  	if(lucro > prejuizo)
+												{
+													lucro = lucro - prejuizo;
+													printf("\n-----------------------------------------------------------\n");
+													printf("\n Ate agora o jogador tem um lucro de %.2f",lucro);
+												}
+													else if(lucro == prejuizo)
+												{
+													lucro = prejuizo = 0;
+													printf("\n-----------------------------------------------------------\n");
+													printf("\n O jogador nao tem nem lucro nem prejuizo");	
+												}
+													else
+													{
+														prejuizo = prejuizo - lucro;
+														printf("\n-----------------------------------------------------------\n");
+														printf("\n Ate agora o jogador tem um prejuizo de %.2f",prejuizo);
+													}
 												}
 						}
 				}

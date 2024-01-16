@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
 		printf("\n Digite a quantidade da aposta:");
 		scanf("%f", &quantidade);
 		numeroSorteado = rand()%50 + 1;
-		numeroSorteado = 12;
+		numeroSorteado = 2;
 		if(quantidade < 0)
 		  printf("\n Erro: Valor Invalido! A quantidade deve ser positiva!");
 		  	else if(quantidade == 0)
@@ -41,24 +41,13 @@ int main(int argc, char *argv[])
 						}
 						else 
 						{
-								dezena = numeroDeApostas / 10;
-								unidade = numeroDeApostas % 10;
-			 			  		q = q + 1;
-			 			  		if(numeroDeApostas == numeroSorteado)
-			 			  		{
-			 			  			valorPago = quantidade * 5;
-			 			  			lucro = valorPago - quantidade;
-			 			  			printf("\n ________________________________________________________\n");
-			 			  			printf("\n Jogada %d", q);
-			 			  			printf("\n Quantia Apostada: %.2fKz", quantidade);
-			 			  			printf("\n Numero Apostado %d", numeroDeApostas);
-			 			  			printf("\n Numero Sorteado %d", numeroSorteado);
-			 			  			printf("\n O jogador acertou no numero sorteado!");
-			 			  			printf("\n---------------------------------------------------------\n");
-			 			  			printf("\n Cassino pagou: %.2fKz", valorPago);
-			 			  			printf("\n Jogador ganhou: %.2fKz", lucro);
-								}
-								else if(((unidade * 10) + dezena) == numeroSorteado)
+							q = q + 1;
+							if(numeroSorteado > 10)
+							{
+							
+								dezena = numeroSorteado / 10;
+								unidade = numeroSorteado % 10;
+								 if( numeroDeApostas == ((unidade * 10) + dezena))
 									{
 										valorPago = quantidade * 3;
 									 	lucro = valorPago - quantidade;
@@ -72,37 +61,7 @@ int main(int argc, char *argv[])
 									 	printf("\n Cassino pagou: %.2fKz",valorPago);
 									 	printf("\n Jogador ganhou: %.2fKz",lucro);
 									} 
-												 
-												else if(numeroDeApostas == (numeroSorteado / 10))
-													{
-															valorPago = quantidade * 2;
-															lucro = valorPago - quantidade;
-															printf("\n ______________________________________________________ \n");
-															printf("\n Jogada %d", q);
-															printf("\n Quantia Apostada: %.2fKz", quantidade);
-															printf("\n Numero Apostado %d", numeroDeApostas);
-															printf("\n Numero Sorteado %d", numeroSorteado);
-															printf("\n O jogador acertou na dezena do numero sorteado!");
-															printf("\n--------------------------------------------------------\n");
-															printf("\n Cassino pagou: %.2fKz",valorPago);
-															printf("\n Jogador ganhou: %.2fKz",lucro);
-													}
-												//	else if(numeroDeApostas == (numeroSorteado % 10))
-												//	{
-												//			valorPago = quantidade * 2;
-												//			lucro = valorPago - quantidade;
-												//			printf("\n ______________________________________________________ \n");
-												//			printf("\n Jogada %d", q);
-												//			printf("\n Quantia Apostada: %.2fKz", quantidade);
-												//			printf("\n Numero Apostado %d", numeroDeApostas);
-												//			printf("\n Numero Sorteado %d", numeroSorteado);
-												//			printf("\n O jogador acertou na unidade do numero sorteado!");
-												//			printf("\n--------------------------------------------------------\n");
-												//			printf("\n Cassino pagou: %.2fKz",valorPago);
-												//			printf("\n Jogador ganhou: %.2fKz",lucro);
-												//	}
-												
-									else if ((numeroDeApostas / 10) == (numeroSorteado / 10)) 
+										else if ((numeroDeApostas / 10) == (numeroSorteado / 10)) 
 									{
 										valorPago = quantidade * 2;
 										lucro = valorPago - quantidade;
@@ -132,6 +91,54 @@ int main(int argc, char *argv[])
 												printf("\n Jogador ganhou: %.2fKz",lucro);
 															 			  		
 											}
+							}
+			 			  		
+			 			  		 if(numeroDeApostas == numeroSorteado)
+			 			  		{
+			 			  			valorPago = quantidade * 5;
+			 			  			lucro = valorPago - quantidade;
+			 			  			printf("\n ________________________________________________________\n");
+			 			  			printf("\n Jogada %d", q);
+			 			  			printf("\n Quantia Apostada: %.2fKz", quantidade);
+			 			  			printf("\n Numero Apostado %d", numeroDeApostas);
+			 			  			printf("\n Numero Sorteado %d", numeroSorteado);
+			 			  			printf("\n O jogador acertou no numero sorteado!");
+			 			  			printf("\n---------------------------------------------------------\n");
+			 			  			printf("\n Cassino pagou: %.2fKz", valorPago);
+			 			  			printf("\n Jogador ganhou: %.2fKz", lucro);
+								}
+								
+												 
+												else if(numeroDeApostas == (numeroSorteado / 10))
+													{
+															valorPago = quantidade * 2;
+															lucro = valorPago - quantidade;
+															printf("\n ______________________________________________________ \n");
+															printf("\n Jogada %d", q);
+															printf("\n Quantia Apostada: %.2fKz", quantidade);
+															printf("\n Numero Apostado %d", numeroDeApostas);
+															printf("\n Numero Sorteado %d", numeroSorteado);
+															printf("\n O jogador acertou na dezena do numero sorteado!");
+															printf("\n--------------------------------------------------------\n");
+															printf("\n Cassino pagou: %.2fKz",valorPago);
+															printf("\n Jogador ganhou: %.2fKz",lucro);
+													}
+													else if(numeroDeApostas == (numeroSorteado % 10))
+													{
+															valorPago = quantidade * 2;
+															lucro = valorPago - quantidade;
+															printf("\n ______________________________________________________ \n");
+															printf("\n Jogada %d", q);
+															printf("\n Quantia Apostada: %.2fKz", quantidade);
+															printf("\n Numero Apostado %d", numeroDeApostas);
+															printf("\n Numero Sorteado %d", numeroSorteado);
+															printf("\n O jogador acertou na unidade do numero sorteado!");
+															printf("\n--------------------------------------------------------\n");
+															printf("\n Cassino pagou: %.2fKz",valorPago);
+															printf("\n Jogador ganhou: %.2fKz",lucro);
+													}
+												
+									
 											
 											else if((numeroDeApostas % 10) == (numeroSorteado / 10)) 
 											{
